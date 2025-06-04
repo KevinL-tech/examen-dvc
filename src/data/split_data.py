@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-df = pd.read_csv("data/raw/raw.csv")
+df = pd.read_csv("data/raw_data/raw.csv")
 
 X = df.drop(columns = ["silica_concentrate"], inplace=True)
 y = df["silica_concentrate"]
