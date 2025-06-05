@@ -1,2 +1,36 @@
 /venv
 /clean_data.csv
+
+# DVC
+*.dvc
+.dvc/
+dvc.lock
+
+# Données brutes ou transformées
+data/raw_data/
+data/processed_data/
+
+# Sauf les dossiers eux-mêmes
+!data/
+!data/raw_data/
+!data/processed_data/
+
+# Modèles
+models/
+!models/
+!models/.gitignore
+
+# Métriques
+metrics/
+!metrics/
+!metrics/.gitignore
+!metrics/scores.json
+
+# Python
+__pycache__/
+*.pyc
+*.pkl
+
+# VSCode/système
+.vscode/
+.DS_Store
