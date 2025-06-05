@@ -9,8 +9,8 @@ stages:
       size: 333757
     - path: src/data/split_data.py
       hash: md5
-      md5: 0e5179e89675c78cb67b849157ef8cf5
-      size: 681
+      md5: 8434798573e69178cb1c01f2e87deca4
+      size: 711
     params:
       params.yaml:
         split_data.seed: 42
