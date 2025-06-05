@@ -65,8 +65,22 @@ stages:
       size: 27405
     - path: src/models/grid_search.py
       hash: md5
-      md5: 59a0e5f0d6ca5d28ec37bb5f18a41144
-      size: 678
+      md5: c59a05667e18d82317bb0e77fb5ec02c
+      size: 814
+    params:
+      params.yaml:
+        grid_search.max_depth:
+        - 2
+        - 5
+        - 10
+        grid_search.min_samples_split:
+        - 2
+        - 3
+        - 5
+        grid_search.n_estimators:
+        - 100
+        - 200
+        - 500
     outs:
     - path: models/best_params.pkl
       hash: md5

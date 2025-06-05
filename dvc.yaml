@@ -27,9 +27,9 @@ stages:
       - data/processed_data/y_train.csv
       - src/models/grid_search.py
     params:
-    - grid_search.n_estimators
-    - grid_search.max_depth
-    - grid_search.min_samples_split
+      - grid_search.n_estimators
+      - grid_search.max_depth
+      - grid_search.min_samples_split
     outs:
       - models/best_params.pkl
 
