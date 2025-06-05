@@ -1,12 +1,4 @@
 stages:
-  grid_search:
-    cmd: python src/models/grid_search.py
-    deps:
-    - data/processed_data/X_train_scaled.csv
-    - data/processed_data/y_train.csv
-    - src/models/grid_search.py
-    outs:
-    - models/best_params.pkl
   split_data:
     cmd: python src/data/split_data.py
     deps:
@@ -17,6 +9,7 @@ stages:
     - data/processed_data/X_train.csv
     - data/processed_data/y_test.csv
     - data/processed_data/y_train.csv
+
   normalize_data:
     cmd: python src/data/normalize_data.py
     deps:
@@ -26,6 +19,16 @@ stages:
     outs:
     - data/processed_data/X_test_scaled.csv
     - data/processed_data/X_train_scaled.csv
+
+  grid_search:
+    cmd: python src/models/grid_search.py
+    deps:
+      - data/processed_data/X_train_scaled.csv
+      - data/processed_data/y_train.csv
+      - src/models/grid_search.py
+    outs:
+      - models/best_params.pkl
+
   train_model:
     cmd: python src/models/train_model.py
     deps:
@@ -45,5 +48,5 @@ stages:
     outs:
     - data/processed_data/predictions.csv
     metrics:
-    - metrics/scores.json:
-        cache: false
+    - metrics/scores.json
+  
