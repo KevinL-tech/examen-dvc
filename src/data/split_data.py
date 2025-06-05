@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
+import yaml
 
 df = pd.read_csv("data/raw_data/raw.csv")
 df = df.drop(columns = ["date"])
@@ -13,3 +14,6 @@ X_train.to_csv("data/processed_data/X_train.csv", index = False)
 X_test.to_csv("data/processed_data/X_test.csv", index = False)
 y_train.to_csv("data/processed_data/y_train.csv", index = False)
 y_test.to_csv("data/processed_data/y_test.csv", index = False)
+
+with open("params.yaml") as f:
+    params = yaml.safe_load(f)["split_data"]
