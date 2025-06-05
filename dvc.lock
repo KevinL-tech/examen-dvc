@@ -75,8 +75,8 @@ stages:
         - 10
         grid_search.min_samples_split:
         - 2
-        - 3
-        - 5
+        - 4
+        - 6
         grid_search.n_estimators:
         - 100
         - 200
