@@ -15,5 +15,7 @@ X_test.to_csv("data/processed_data/X_test.csv", index = False)
 y_train.to_csv("data/processed_data/y_train.csv", index = False)
 y_test.to_csv("data/processed_data/y_test.csv", index = False)
 
-with open("params.yaml") as f:
-    params = yaml.safe_load(f)["split_data"]
+with open("params.yaml", "r") as f:
+    params = yaml.safe_load(f)
+
+seed = params["split_data"]["seed"]
