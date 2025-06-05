@@ -10,7 +10,7 @@ model = RandomForestRegressor(random_state=42)
 param_grid = {
     "n_estimators": [100, 200, 500],
     "max_depth" : [2, 5, 10],
-    "min_samples_split" : [1, 3, 5]}
+    "min_samples_split" : [2, 3, 5]}
 
 grid_search = GridSearchCV(model, param_grid, cv=5, scoring="neg_root_mean_squared_error")
 grid_search.fit(X_train, y_train)
