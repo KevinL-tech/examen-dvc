@@ -21,8 +21,8 @@ predictions = pd.DataFrame({
 predictions.to_csv("data/processed_data/predictions.csv", index = False)
 
 scores = {
-    "rmse" = rmse,
-    "r2" = r2}
+    "rmse" : rmse,
+    "r2" : r2}
 
 with open("metrics/scores.json", "w") as f :
     json.dump(scores, f, indent=4)
